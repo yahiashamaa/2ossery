@@ -1,17 +1,18 @@
-# Tossery
+# 2ossery
 
-Bootloader unlock PoC for the Nokia 2.2 (wasp)
-
-## Vulnerable versions
-
-Android 9 works, Android 10 should, Android 11 is not supported.
+Bootloader unlock PoC for Amazfit Verge (qogir), Stratos (everest) and Pace (huanghe)
 
 ## Why does this work
 
-Improper checks done on the encrypted unlock key blob makes the device accept any binary as an unlock key and allows for unlock.
+Huami locked the bootloader in a later update, but left the `fastboot oem unlock` mechanism in place, and the key generation is embarrassingly simple.
 
 ## How to run
 
-Install all needed packages via ```pip3 install -r requirements.txt```
+1. Install dependencies: `pip3 install -r requirements.txt`
+2. Boot your device into fastboot mode
+3. Run `python3 2ossery.py`
 
-Run ```python3 tossery.py``` and follow the instructions
+## Credits
+
+- [halal-beef](https://github.com/halal-beef) for [Tossery](https://github.com/halal-beef/tossery)
+- Mayo Al-Tossery
